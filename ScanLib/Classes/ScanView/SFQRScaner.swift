@@ -101,7 +101,7 @@ open class SFQRScaner: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     
     /// 交给外界控制是否开始
     /// - Returns: 空
-    internal func srart() -> Void {
+    public func srart() -> Void {
         
         if self.previewLayer == nil  {
             setUp(contentView, target)
@@ -128,7 +128,7 @@ open class SFQRScaner: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     /// 从图片中读取二维码
     /// - Parameter image: 输入的图片
     /// - Returns: 读取的信息
-    internal func readFromImage(_ image:UIImage) {
+    public func readFromImage(_ image:UIImage) {
         let targetImage:CGImage? = image.cgImage
         guard targetImage != nil else {
             self.delegate?.SFQRScanerProcessFailed(self)
