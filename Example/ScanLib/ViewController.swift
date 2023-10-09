@@ -8,7 +8,8 @@
 
 import UIKit
 import ScanLib
-class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+import AVFoundation
+class ViewController: UIViewController {
     
     lazy private var mainView: ScanView = {
         let mainView = ScanView()
@@ -53,5 +54,25 @@ extension ViewController:SFQRScanerProtocol{
         guard let resultStr = result else {return}
         scanner.stop()
         debugPrint("------解析的二维码值-------\(resultStr)")
+    }
+}
+
+extension ViewController:UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true) {[weak self]() in
+            guard let weakSelf = self else { return  }
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
+                weakSelf.mainView.scanner.srart()
+            }
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        picker.dismiss(animated: true) {
+            self.mainView.scanner.readFromImage(image!)
+        }
     }
 }

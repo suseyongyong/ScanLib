@@ -10,7 +10,7 @@ PODS:
   - RxRelay (6.6.0):
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
-  - ScanLib (0.1.0):
+  - ScanLib (0.1.1):
     - RxCocoa
     - RxSwift
     - SnapKit
@@ -37,7 +37,7 @@ SPEC CHECKSUMS:
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
-  ScanLib: 52c73c3fdc560059ade0fab63c74a171f90e7d40
+  ScanLib: ad1f1bef383da689ffedb1ca20bf522ea94930ed
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
 PODFILE CHECKSUM: 00b558c4579c6b7585f9dbcd845de6626692f497

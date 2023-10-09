@@ -1,6 +1,6 @@
 {
   "name": "ScanLib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A short description of ScanLib.",
   "swift_versions": "5.0",
   "description": "TODO: Add long description of the pod here.",
@@ -14,15 +14,15 @@
   },
   "source": {
     "git": "https://github.com/suseyongyong/ScanLib.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "10.0"
   },
   "source_files": "ScanLib/Classes/**/*",
   "resource_bundles": {
-    "ScanLib": [
-      "ScanLib/Assets/*.png"
+    "SwiftFrameRes": [
+      "ScanLib/Assets/*"
     ]
   },
   "frameworks": [
