@@ -2,8 +2,9 @@
   "name": "ScanLib",
   "version": "0.1.0",
   "summary": "A short description of ScanLib.",
+  "swift_versions": "5.0",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/roger/ScanLib",
+  "homepage": "https://github.com/suseyongyong/ScanLib",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +13,32 @@
     "roger": "suseliyong@163.com"
   },
   "source": {
-    "git": "https://github.com/roger/ScanLib.git",
+    "git": "https://github.com/suseyongyong/ScanLib.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "ScanLib/Classes/**/*"
+  "source_files": "ScanLib/Classes/**/*",
+  "resource_bundles": {
+    "ScanLib": [
+      "ScanLib/Assets/*.png"
+    ]
+  },
+  "frameworks": [
+    "UIKit",
+    "AVFoundation"
+  ],
+  "dependencies": {
+    "SnapKit": [
+
+    ],
+    "RxSwift": [
+
+    ],
+    "RxCocoa": [
+
+    ]
+  },
+  "swift_version": "5.0"
 }

@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class BaseView: UIView {
+open class BaseView: UIView {
 
     lazy var disposeBag = DisposeBag()
     
@@ -21,7 +21,7 @@ class BaseView: UIView {
 //        requestData()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

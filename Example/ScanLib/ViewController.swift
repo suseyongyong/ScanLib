@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import ScanLib
+class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    lazy private var mainView: ScanView = {
+        let mainView = ScanView()
+        mainView.backgroundColor = .clear
+        return mainView
+    }()
 
-class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setUpView()
+    }
+    
+    func setUpView(){
+        mainView.scanner.delegate = self
+        mainView.controller.delegate = self
+        view.backgroundColor = .clear
+        self.view.addSubview(mainView)
+        mainView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,3 +39,19 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController:SFQRScanerProtocol{
+    
+    func SFQRScanerProcessFailed(_ scanner: SFQRScaner) {
+        print("失败了")
+    }
+    
+    func SFQRScanerInitilizationFailed(_ scanner: SFQRScaner) {
+        print("初始化失败")
+    }
+    
+    func SFQRScanerGainResult(_ scanner: SFQRScaner, _ result: String?) {
+        guard let resultStr = result else {return}
+        scanner.stop()
+        debugPrint("------解析的二维码值-------\(resultStr)")
+    }
+}

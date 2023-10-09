@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-protocol SFQRScanerProtocol:NSObjectProtocol {
+public  protocol SFQRScanerProtocol:NSObjectProtocol {
     /// 二维码扫描器初始化失败了。
     /// - Parameter scanner: 二维码扫描器
     func SFQRScanerInitilizationFailed(_ scanner:SFQRScaner) -> Void
@@ -22,7 +22,7 @@ protocol SFQRScanerProtocol:NSObjectProtocol {
     func SFQRScanerProcessFailed(_ scanner:SFQRScaner) -> Void
 }
 
-class SFQRScaner: NSObject,AVCaptureMetadataOutputObjectsDelegate {
+open class SFQRScaner: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     // MARK: - lifecycle
     deinit {
         print("\(type(of: self))释放了")
@@ -119,7 +119,7 @@ class SFQRScaner: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     
     /// 交给外界控制是否停止识别
     /// - Returns: 空
-    internal func stop() -> Void {
+    public  func stop() -> Void {
         self.session.stopRunning()
         self.isRunning = false
     }
@@ -149,7 +149,7 @@ class SFQRScaner: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     }
     // MARK: - actions
     // MARK: - accessors
-    weak internal var delegate:SFQRScanerProtocol?
+    weak public var delegate:SFQRScanerProtocol?
     internal var isRunning:Bool = false/*正常情况下它并没有在运行*/
     private var device:AVCaptureDevice?
     private var inputDevice:AVCaptureDeviceInput?
@@ -163,7 +163,7 @@ class SFQRScaner: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     }()
     private var previewLayer:AVCaptureVideoPreviewLayer?
     // MARK: - delegates
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.count > 0 {
             let first:AVMetadataMachineReadableCodeObject = metadataObjects.first! as! AVMetadataMachineReadableCodeObject
             self.delegate?.SFQRScanerGainResult(self, first.stringValue)

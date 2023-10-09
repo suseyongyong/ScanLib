@@ -21,20 +21,22 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
                        DESC
-  s.homepage         = 'https://github.com/roger/ScanLib'
+  s.homepage         = 'https://github.com/suseyongyong/ScanLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'roger' => 'suseliyong@163.com' }
-  s.source           = { :git => 'https://github.com/roger/ScanLib.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/suseyongyong/ScanLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'ScanLib/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'ScanLib' => ['ScanLib/Assets/*.png']
-  # }
+   s.resource_bundles = {
+    'SwiftFrameRes' => ['ScanLib/Assets/*']
+  }
+ # s.resource_bundles = {
+ # 'ScanLib' => ['ScanLib/Assets/*.png']
+ # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'AVFoundation'

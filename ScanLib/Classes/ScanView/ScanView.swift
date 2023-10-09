@@ -11,9 +11,9 @@ import SnapKit
 import RxSwift
 
 
-class ScanView: BaseView {
+open class ScanView: BaseView {
     
-    let controller:UIImagePickerController = UIImagePickerController.init()
+public  let controller:UIImagePickerController = UIImagePickerController.init()
     
     lazy var topLeftView:UIView = {
         let topLeftView = UIView()
@@ -91,7 +91,7 @@ class ScanView: BaseView {
         return switchBtn
     }()
     
-     var scanner:SFQRScaner = {
+   public  var scanner:SFQRScaner = {
         let result:SFQRScaner = SFQRScaner.init()
         return result
     }()
@@ -105,7 +105,7 @@ class ScanView: BaseView {
         controller.sourceType = .savedPhotosAlbum
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
