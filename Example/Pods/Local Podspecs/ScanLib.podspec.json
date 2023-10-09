@@ -1,0 +1,22 @@
+{
+  "name": "ScanLib",
+  "version": "0.1.0",
+  "summary": "A short description of ScanLib.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/roger/ScanLib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "roger": "suseliyong@163.com"
+  },
+  "source": {
+    "git": "https://github.com/roger/ScanLib.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "ScanLib/Classes/**/*"
+}

@@ -1,0 +1,6 @@
+framework module ScanLib {
+  umbrella header "ScanLib-umbrella.h"
+
+  export *
+  module * { export * }
+}
