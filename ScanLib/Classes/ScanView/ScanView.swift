@@ -14,7 +14,23 @@ import RxSwift
 open class ScanView: BaseView {
     
 public  let controller:UIImagePickerController = UIImagePickerController.init()
-    
+    //读取相册二维码图标
+    public  var albumButtonStr:String? {
+        didSet {
+            if let albumButtonStr = albumButtonStr {
+                self.albumButton.setImage(UIImage(named: albumButtonStr ), for: .normal)
+            }
+        }
+    }
+    //打开灯光图标
+    public  var switchBtnStr:String? {
+        didSet {
+            if let switchBtnStr = switchBtnStr {
+                self.switchBtn.setImage(UIImage(named: switchBtnStr), for: .normal)
+            }
+        }
+    }
+
     lazy var topLeftView:UIView = {
         let topLeftView = UIView()
         topLeftView.backgroundColor = .white
@@ -283,7 +299,7 @@ public  let controller:UIImagePickerController = UIImagePickerController.init()
        let vc = window?.rootViewController
        return currentVC(vc)
     }
-
+//获取当前控制器
     public func currentVC(_ vc :UIViewController?) -> UIViewController? {
        if vc == nil {
           return nil
