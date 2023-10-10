@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     func setUpView(){
         mainView.scanner.delegate = self
         mainView.controller.delegate = self
+        mainView.albumButtonStr = "btn_album"
+        mainView.switchBtnStr = "btn_open"
         view.backgroundColor = .clear
         self.view.addSubview(mainView)
         mainView.snp.makeConstraints { make in
